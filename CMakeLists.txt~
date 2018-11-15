@@ -1,0 +1,56 @@
+cmake_minimum_required (VERSION 2.6)
+project (sw4-sound-module)
+
+# Dołączanie biblioteki wątków
+find_package (Threads)
+
+# Dołączanie biblioteki alsa
+find_path(ALSA_INCLUDE_DIR NAMES alsa/asoundlib.h
+          DOC "The ALSA (asound) include directory"
+)
+
+find_library(ALSA_LIBRARY NAMES asound
+          DOC "The ALSA (asound) library"
+)
+
+set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin/lib)
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
+set( STK_DIRECTORY /home/wojciech/C++_libraries/stk-4.6.0 )
+
+include_directories(
+    ${PROJECT_SOURCE_DIR}
+    ${STK_DIRECTORY}/include
+    )
+
+add_executable(rtsine
+rtsine.cpp
+)
+TARGET_LINK_LIBRARIES(rtsine 
+    ${CMAKE_THREAD_LIBS_INIT}
+    ${ALSA_LIBRARY}
+    ${STK_DIRECTORY}/src/libstk.a)
+set_property(TARGET rtsine PROPERTY CXX_STANDARD 14)
+set_property(TARGET rtsine PROPERTY CXX_STANDARD_REQUIRED ON)
+
+add_executable(rtsine
+rtsine.cpp
+)
+TARGET_LINK_LIBRARIES(rtsine 
+    ${CMAKE_THREAD_LIBS_INIT}
+    ${ALSA_LIBRARY}
+    ${STK_DIRECTORY}/src/libstk.a)
+set_property(TARGET rtsine PROPERTY CXX_STANDARD 14)
+set_property(TARGET rtsine PROPERTY CXX_STANDARD_REQUIRED ON)
+
+add_executable(helicopter
+helicopter.cpp
+)
+TARGET_LINK_LIBRARIES(rtsine 
+    ${CMAKE_THREAD_LIBS_INIT}
+    ${ALSA_LIBRARY}
+    ${STK_DIRECTORY}/src/libstk.a)
+set_property(TARGET helicopter PROPERTY CXX_STANDARD 14)
+set_property(TARGET helicopter PROPERTY CXX_STANDARD_REQUIRED ON)
+
+#testy na razie niepotrzebne
+# add_subdirectory(tests)
