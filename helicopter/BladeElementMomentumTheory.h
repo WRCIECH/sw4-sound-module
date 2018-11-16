@@ -1,9 +1,10 @@
+//Class based on: http://www.aerodynamics4students.com/propulsion/blade-element-rotor-theory.php
+
 #ifndef BLADE_ELEMENT_MOMENTUM_H
 #define  BLADE_ELEMENT_MOMENTUM_H
 
 #include <cmath>
 #include <vector>
-//#include <RotationalNoise.h>
 
 struct RotationalNoiseInput
 {

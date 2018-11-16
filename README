@@ -1,6 +1,7 @@
 The repository presents my master’s thesis work (Sound synthesis module for SW-4 helicopter simulator). 
 
-Sounds are generated procedurally at runtime. The module was written in C++ using Sound Toolkit Library (STK). 
+Sounds are generated procedurally at runtime. The module was written in C++ using Sound Toolkit Library (STK):
+(https://ccrma.stanford.edu/software/stk/).
 
 Loading noise of rotor is based on frequency method described in: Garrick, I. E. and Watkins, C. E. [1953], A theoretical study of the effect of forward speed on the free-space sound-pressure field around propellers, Technical note 3018, NACA. 
 
@@ -13,3 +14,14 @@ I haven’t time to write such a model to my module, but it seems to be very int
 The acoustics of the cabin was calculated in OpenFoam, but the results are far from realistic due to lack of data. 
 
 There are a lot of sounds not modeled e.g. rotor thickness noise, nonlinear sound from rotors, other sounds from turboshaft engine, effects from structure-borne sounds etc.
+
+
+
+Files description:
+bin - contains executables, tcl gui to change parameters at runtime.
+dsp - STK library files and implementation of one-third octave band filters (Coefficients were calculated at http://www.micromodeler.com/dsp/).
+helicopter - classes implementing sounds.
+gtest, test - various tests.
+
+Recorded example of module:
+https://www.youtube.com/watch?v=MdNBXZ0-Sxc
