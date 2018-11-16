@@ -131,7 +131,6 @@ void run(RotationalNoiseAudio& rn)
     char container[100];
     while (1)
     {
-        std::cout << "XXXXXXx\n";
         //if (sock.receive(&rn.rni, sizeof(rn.rni), received, ip, inPort))
         if (sock.receive(container, sizeof(100), received, ip, inPort))
         {
