@@ -23,8 +23,5 @@ dsp - STK library files and implementation of one-third octave band filters (Coe
 helicopter - classes implementing sounds.
 gtest, test - various tests.
 
-<<<<<<< HEAD
 Recorded example of module:
 https://www.youtube.com/watch?v=MdNBXZ0-Sxc
-=======
->>>>>>> d9ffcf31afd3af60ba0ee1d5073ce1a13a681b49
